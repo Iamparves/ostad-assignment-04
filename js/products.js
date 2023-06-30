@@ -6,7 +6,7 @@ const products = [
   },
   {
     id: 1,
-    name: "Blue Leather Sandal",
+    name: "Soft Rubber Sandal",
     price: 1500,
   },
   {
@@ -16,7 +16,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Black Hoodie",
+    name: "Full Sleeve Hoodie",
     price: 900,
   },
 ];

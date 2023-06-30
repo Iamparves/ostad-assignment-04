@@ -92,9 +92,37 @@ body {
   margin-bottom: 20px;
 }
 
+.cartHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .cartTitle {
   font-size: 20px;
-  margin-bottom: 20px;
+}
+
+.cartBtn {
+  display: block;
+  padding: 10px 20px;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #fff;
+  background: #f87070;
+  transition: 200ms ease;
+}
+
+.clearCartBtn:hover {
+  background: hsl(0, 91%, 65%);
+}
+
+.clearCartBtn:active {
+  letter-spacing: -.5px;
 }
 
 .cartList {
@@ -158,31 +186,8 @@ body {
   cursor: pointer;
 }
 
-.cartBtn {
-  width: 100%;
-  display: block;
-  padding: 10px 20px;
-  border: 0;
-  outline: 0;
-  font-size: 16px;
-  margin: 10px auto 0;
-  cursor: pointer;
-  font-weight: 500;
-  border-radius: 5px;
-  color: #f87070;
-  background: hsla(0, 91%, 71%, 0.3);
-  border: 2px solid #f87070;
-  transition: 300ms ease;
-}
-
-.clearCartBtn:hover {
-  color: #fff;
-  background: #f87070;
-  letter-spacing: 1px;
-}
-
-.clearCartBtn:active {
-  letter-spacing: 0;
+.billDetails {
+  margin-top: 20px;
 }
 
 .billDetails .item {
@@ -198,13 +203,13 @@ body {
 }
 
 .placeOrderBtn {
-  border-color: #03d3a2;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px;
   background: #03d3a2;
-  color: #fff;
 }
 
 .placeOrderBtn:hover {
-  border-color: #00b592;
   background: #00b592;
 }
 

@@ -1,18 +1,24 @@
-import { getCartItems } from "./cart.js";
+import { addToCart, getCartItems } from "./cart.js";
 import products from "./products.js";
 
 const productsContainer = document.querySelector(".productsContainer");
 const cartList = document.querySelector(".cartList");
 const billDetails = document.querySelector(".billDetails");
 
+window.handleAddToCart = (id) => {
+  addToCart(id);
+  renderCartList();
+};
+
 export const renderProductList = () => {
   productsContainer.innerHTML = "";
   products.forEach((product) => {
+    const { id, name, price } = product;
     const productCard = `
       <div class="product__card">
-        <h2>${product.name}</h2>
-        <p>${product.price} BDT</p>
-        <button data-id="${product.id}" class="addToCartBtn">Add to Cart</button>
+        <h2>${name}</h2>
+        <p>${price} BDT</p>
+        <button class="addToCartBtn" onclick="handleAddToCart(${id})">Add to Cart</button>
       </div>
       `;
 
@@ -59,7 +65,7 @@ const renderBillDetails = (cartProducts) => {
   );
   const { percentage, discount } = calculateDiscount(subtotal);
   const total = subtotal - discount;
-  
+
   const billDetailsContent = `<div class="item">
           <p>Sub Total</p>
           <p>BDT ${subtotal.toFixed(1)}</p>
