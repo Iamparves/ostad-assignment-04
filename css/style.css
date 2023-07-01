@@ -163,16 +163,23 @@ body {
 }
 
 .cartItem .quantity span {
+  color: #373e68;
   font-size: 24px;
   cursor: pointer;
 }
 
 .cartItem .quantity p {
+  color: #373e68;
   font-size: 20px;
 }
 
 .cartItem .quantity span:last-child {
   transform: scaleX(1.5);
+}
+
+.cartItem .quantity span[disabled="true"] {
+  color: hsl(0, 0%, 65%);
+  pointer-events: none;
 }
 
 .cartItem .totalPrice {

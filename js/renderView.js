@@ -29,6 +29,7 @@ export const renderProductList = () => {
 export const renderCartList = () => {
   cartList.innerHTML = "";
   const cartItems = getCartItems();
+
   const cartProducts = cartItems.map((item) => {
     const product = products.find((product) => product.id === item.id);
     return { ...product, quantity: item.quantity };
@@ -38,18 +39,18 @@ export const renderCartList = () => {
     const { id, name, price, quantity } = product;
 
     const cartItem = `
-      <div class="cartItem">
+      <div class="cartItem" data-id="${id}">
         <div class="namePrice">
           <h4>${name}</h4>
           <p>${price} BDT</p>
         </div>
         <div class="quantity">
-          <span data-id="${id}" class="increment">+</span>
+          <span class="increment">+</span>
           <p>${quantity}</p>
-          <span data-id="${id}" class="decrement">-</span>
+          <span class="decrement" disabled="${quantity == 1}">-</span>
         </div>
         <h4 class="totalPrice">${price * quantity} BDT</h4>
-        <img data-id="${id}" class="delete" src="img/delete.jpg" alt="">
+        <img class="delete" src="img/delete.jpg" alt="">
       </div>
       `;
     cartList.insertAdjacentHTML("beforeend", cartItem);

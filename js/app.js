@@ -10,7 +10,7 @@ const cartItemsContainer = document.querySelector(".cartItemsContainer");
 
 cartItemsContainer.addEventListener("click", (e) => {
   const el = e.target;
-  const id = Number(e.target.dataset.id);
+  const id = Number(el.closest(".cartItem")?.dataset?.id);
 
   if (el.closest(".clearCartBtn")) clearCart();
   if (el.closest(".increment")) incrementCart(id);
